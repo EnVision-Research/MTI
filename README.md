@@ -87,15 +87,9 @@ Many thanks for the generous help from [Lequan Lin](https://scholar.google.com/c
 
 
 
-<!-- 
-## BibTeX
-```BibTeX
-@inproceedings{yang2024objectaware,
-title     = {Object-Aware Inversion and Reassembly for Image Editing},
-author    = {Zhen Yang and Ganggui Ding and Wen Wang and Hao Chen and Bohan Zhuang and Chunhua Shen},
-booktitle = {The Twelfth International Conference on Learning Representations},
-year      = {2024},
-url       = {https://openreview.net/forum?id=dpcVXiMlcv}
+@article{yang2025less,
+  title   = {Less is More: Improving LLM Reasoning with Minimal Test-Time Intervention},
+  author  = {Zhen Yang and Mingyang Zhang and Feng Chen and Ganggui Ding and Liang Hou and Xin Tao and Pengfei Wan and Ying-Cong Chen},
+  year    = {2025},
+  journal = {arXiv preprint arXiv: 2510.13940}
 }
-```
- -->
