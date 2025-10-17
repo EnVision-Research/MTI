@@ -86,10 +86,11 @@ Since the monkey patch may introduce unknown bugs, we recommend that, during the
 Many thanks for the generous help from [Lequan Lin](https://scholar.google.com/citations?user=UR3NoxIAAAAJ&hl=en&google_abuse=GOOGLE_ABUSE_EXEMPTION%3DID%3D7ff5914ede42912b:TM%3D1760170127:C%3Dr:IP%3D61.16.102.76-:S%3DK0KpwoZF8myjNDV5eeLcduk%3B+path%3D/%3B+domain%3Dgoogle.com%3B+expires%3DSat,+11-Oct-2025+11:08:47+GMT).
 
 
-
+```
 @article{yang2025less,
   title   = {Less is More: Improving LLM Reasoning with Minimal Test-Time Intervention},
   author  = {Zhen Yang and Mingyang Zhang and Feng Chen and Ganggui Ding and Liang Hou and Xin Tao and Pengfei Wan and Ying-Cong Chen},
   year    = {2025},
   journal = {arXiv preprint arXiv: 2510.13940}
 }
+```
