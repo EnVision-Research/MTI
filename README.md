@@ -50,12 +50,12 @@ pip install vllm==0.10.2
 pip install accelerate==1.10.1
 pip install transformers==4.56.1
 ```
-2. Run offline with vllm (Qwen)
+2. Run offline with vllm
 ```
 python run_vllm_offline.py
 ```
 
-3. Run online with vllm (Qwen)
+3. Run online with vllm
 ```
 python run_vllm_online.py \
   --model Qwen3/Qwen3-8B \
@@ -65,7 +65,7 @@ python run_vllm_online.py \
   --api-key yzisallyouneed
 ```
 
-4. Run with huggingface (Qwen)
+4. Run with huggingface
 ```
 python run_hf.py
 ```
