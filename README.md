@@ -124,9 +124,9 @@ Many thanks for the generous help from [Lequan Lin](https://scholar.google.com/c
 ## BibTeX
 ```BibTeX
 @article{yang2025less,
-  title   = {Less is More: Improving LLM Reasoning with Minimal Test-Time Intervention},
-  author  = {Zhen Yang and Mingyang Zhang and Feng Chen and Ganggui Ding and Liang Hou and Xin Tao and Pengfei Wan and Ying-Cong Chen},
-  year    = {2025},
-  journal = {arXiv preprint arXiv: 2510.13940}
+  title={Less is More: Improving LLM Reasoning with Minimal Test-Time Intervention},
+  author={Yang, Zhen and Zhang, Mingyang and Chen, Feng and Ding, Ganggui and Hou, Liang and Tao, Xin and Wan, Pengfei and Chen, Ying-Cong},
+  journal={arXiv preprint arXiv:2510.13940},
+  year={2025}
 }
 ```
