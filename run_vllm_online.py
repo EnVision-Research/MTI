@@ -320,9 +320,9 @@ def execute_model(
 
                 if not hasattr(self, "tokenizer_"):
                     self.tokenizer_ = AutoTokenizer.from_pretrained(self.vllm_config.model_config.tokenizer)
-                kv_reuse_np_list = self.tokenizer_.batch_encode_plus(kv_reuse_np_)['input_ids']
+                kv_reuse_np_list = self.tokenizer_.batch_encode_plus(kv_reuse_np_, add_special_tokens=False)['input_ids']
                 kv_reuse_np_ = torch.tensor([x for pair in kv_reuse_np_list for x in pair]).to(logits.device)
-
+                length_np_ = len(kv_reuse_np_list[0])
 
                 attn_metadata_uc_ = copy.deepcopy(attn_metadata)
                 new_temporal_seq_lens = torch.tensor([len(x) for x in kv_reuse_np_list], dtype=torch.int32).to(logits.device)
@@ -330,13 +330,13 @@ def execute_model(
                     attn_metadata_uc_[key_].num_actual_tokens = kv_reuse_np_.shape[0]
                     attn_metadata_uc_[key_].max_query_len = max((len(x) for x in kv_reuse_np_list), default=0)
                     attn_metadata_uc_[key_].block_table = attn_metadata[key_].block_table[mask_]
-                    attn_metadata_uc_[key_].query_start_loc = torch.tensor([i * 2 for i in range(len(kv_reuse_np_list) + 1)]).to(logits.device).to(attn_metadata[key_].query_start_loc.dtype)
+                    attn_metadata_uc_[key_].query_start_loc = torch.tensor([i * length_np_ for i in range(len(kv_reuse_np_list) + 1)]).to(logits.device).to(attn_metadata[key_].query_start_loc.dtype)
                     attn_metadata_uc_[key_].seq_lens = attn_metadata[key_].seq_lens[mask_] + new_temporal_seq_lens 
                     attn_metadata_uc_[key_].dont_save_kv_cache = True
                     attn_metadata_uc_[key_].use_cascade = False
 
-                new_positions = get_position(positions)[:2*len(kv_reuse_np_list)].to(logits.device)
-                logits_indices_uc_ = torch.tensor([i * 2 - 1 for i in range(1, len(kv_reuse_np_list) + 1)])
+                new_positions = get_position(positions)[:length_np_ * len(kv_reuse_np_list)].to(logits.device)
+                logits_indices_uc_ = torch.tensor([i * length_np_ - 1 for i in range(1, len(kv_reuse_np_list) + 1)])
 
                 new_num_tokens_ = min((s for s in self.vllm_config.compilation_config.cudagraph_capture_sizes if s >= kv_reuse_np_.shape[0]), default=kv_reuse_np_.shape[0])
 
