@@ -8,15 +8,21 @@ def get_entropy_from_logits(logits):
     p = torch.softmax(logits, dim=-1)
     return -(torch.where(p > 0, p * p.log(), torch.zeros_like(p))).sum(dim=-1)
 
-def get_position(x: torch.Tensor):
+def get_position(x: torch.Tensor, length: int):
     z = (x == 0)
     if not torch.any(z):
-        return torch.stack((x + 1, x + 2), -1).flatten()
+        res = []
+        for i in range(1, length + 1):
+            res.append(x + i)
+        return torch.stack(res, dim=-1).flatten()
     g = z.cumsum(0)
     if z[0]: g -= 1
     m = torch.full((int(g[-1]) + 1,), x.min() - 1, device=x.device, dtype=x.dtype)
     m = m.scatter_reduce(0, g, x, reduce='amax', include_self=True)
-    return torch.stack((m + 1, m + 2), -1).flatten()
+    res = []
+    for i in range(1, length + 1):
+        res.append(m + i)
+    return torch.stack(res, dim=-1).flatten()
 
 def forward(
     self,
