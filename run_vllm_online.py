@@ -335,7 +335,7 @@ def execute_model(
                     attn_metadata_uc_[key_].dont_save_kv_cache = True
                     attn_metadata_uc_[key_].use_cascade = False
 
-                new_positions = get_position(positions)[:length_np_ * len(kv_reuse_np_list)].to(logits.device)
+                new_positions = get_position(positions, length_np_)[:length_np_ * len(kv_reuse_np_list)].to(logits.device)
                 logits_indices_uc_ = torch.tensor([i * length_np_ - 1 for i in range(1, len(kv_reuse_np_list) + 1)])
 
                 new_num_tokens_ = min((s for s in self.vllm_config.compilation_config.cudagraph_capture_sizes if s >= kv_reuse_np_.shape[0]), default=kv_reuse_np_.shape[0])
