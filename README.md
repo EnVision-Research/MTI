@@ -65,6 +65,14 @@ python run_vllm_online.py \
   --api-key yzisallyouneed
 ```
 
+
+4. Run with huggingface
+```
+python run_hf.py
+```
+The huggingface version is only for learning purposes because it does not provide inference acceleration. It is recommended to use the vllm version for evaluation.
+
+
 ## Evaluation
 Since the monkey patch may introduce unknown bugs, we recommend that, during the evaluation phase, you directly replace `vllm`’s `GPUModelRunner.execute_model` and `FlashAttentionImpl.forward` in the Conda-created virtual environment with our `execute_model` and `forward` implementations.
 
