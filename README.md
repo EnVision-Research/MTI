@@ -17,8 +17,6 @@
     ·
     <a href="https://www.xtao.website/"><strong>Xin Tao</strong></a><sup>2</sup>
     ·
-    <a href="https://scholar.google.com/citations?user=P6MraaYAAAAJ&hl=en"><strong>Pengfei Wan</strong></a><sup>2</sup>
-    ·
     <a href="https://www.yingcong.me/"><strong>Ying-Cong Chen</strong></a><sup>1,6</sup>
     <br>
     <sup>1</sup>HKUST(GZ) · <sup>2</sup>Kuaishou Technology · <sup>3</sup>AIML · <sup>4</sup>ZJU · <sup>5</sup>Ant Group · <sup>6</sup>HKUST
