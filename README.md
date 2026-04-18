@@ -123,25 +123,10 @@ Many thanks for the generous help from [Lequan Lin](https://scholar.google.com/c
 
 ## BibTeX
 ```BibTeX
-@article{DBLP:journals/corr/abs-2510-13940,
-  author       = {Zhen Yang and
-                  Mingyang Zhang and
-                  Feng Chen and
-                  Ganggui Ding and
-                  Liang Hou and
-                  Xin Tao and
-                  Pengfei Wan and
-                  Ying{-}Cong Chen},
-  title        = {Less is More: Improving {LLM} Reasoning with Minimal Test-Time Intervention},
-  journal      = {CoRR},
-  volume       = {abs/2510.13940},
-  year         = {2025},
-  url          = {https://doi.org/10.48550/arXiv.2510.13940},
-  doi          = {10.48550/ARXIV.2510.13940},
-  eprinttype   = {arXiv},
-  eprint       = {2510.13940},
-  timestamp    = {Sat, 15 Nov 2025 16:38:53 +0100},
-  biburl       = {https://dblp.org/rec/journals/corr/abs-2510-13940.bib},
-  bibsource    = {dblp computer science bibliography, https://dblp.org}
+@article{yang2025less,
+  title={Less is More: Improving LLM Reasoning with Minimal Test-Time Intervention},
+  author={Yang, Zhen and Zhang, Mingyang and Chen, Feng and Ding, Ganggui and Hou, Liang and Tao, Xin and Chen, Ying-Cong},
+  journal={arXiv preprint arXiv:2510.13940},
+  year={2025}
 }
 ```
